@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cmpt.ws</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <header>
+    <h1>cmpt.ws - Compact your Urls with ease</h1>
+  </header>
+
+  {% if messages %}
+  <div class="messages messages-error">
+      {% for message in messages %}
+        {% if message.tags == 'error' %}
+          <p class="error">{{ message }}</p>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}  
+  <form action="/createURL" method="post">
+    {% csrf_token %}
+    
+    <label for="url">URL</label>
+    <input type="text" name="url" id="url">
+
+    <label for="alias">Alias</label>
+    <small>https://cmpt.ws/</small>
+    <input type="text" name="alias" id="alias" onkeyup="this.value = this.value.toLowerCase()">
+
+    <button type="submit">Compact!</button>
+
+  </form>
+
+  <main class="message-success-container">
+
+  {% if messages %}
+
+    <div class="messages message-success">
+
+      {% for message in messages %}
+
+        {% if message.tags == 'success' %}
+
+          <p class="success">{{ message }}</p>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+    
+    {% endif %}  
+    
+  </main>
+
+</body>
+</html>
