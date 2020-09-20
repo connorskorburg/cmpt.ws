@@ -49,6 +49,7 @@ def createURL(request):
     for key, val in errors.items():
       messages.error(request, val)
     return redirect('/')
+    
   else:
     mysql = connectToMySQL('compact_url')
     query = 'INSERT INTO short_url (long_url, alias) VALUES(%(long_url)s, %(alias)s);'
@@ -57,17 +58,8 @@ def createURL(request):
       "alias": alias
     }
     new_url_id = mysql.query_db(query, data)
-    success = {}
-    success['long_url'] = f'Long URL: {url}'
-    success['alias'] = f'Alias: {alias}'
-    success['short_url'] = f'Short URL: cmpt.ws/{alias}'
-    if len(success) > 0:
-      for key, val in success.items():
-        messages.success(request, val)
-      return redirect('/')
+    return redirect(f'/url/{new_url_id}')
 
-    
-  return redirect('/')
 
 def findURL(request, alias):
   mysql = connectToMySQL('compact_url')
@@ -79,5 +71,24 @@ def findURL(request, alias):
   if len(info) > 0 and info[0]['long_url']:
     print(info[0]['long_url'])
     return redirect(info[0]['long_url'])
+  else:
+    return render(request, 'error.html')
+
+
+def findURLById(request, url_id):
+  mysql = connectToMySQL('compact_url')
+  query = 'SELECT * FROM short_url WHERE id = %(id)s;'
+  data = {
+    "id": url_id
+  }
+  short_url = mysql.query_db(query, data)
+  if len(short_url) > 0:
+    context = {
+      "id": url_id,
+      "long_url": short_url[0]['long_url'],
+      "alias": short_url[0]['alias'],
+      "short_url": 'cmpt.ws/' + short_url[0]['alias'],
+    }
+    return render(request, 'url.html', context)
   else:
     return render(request, 'error.html')

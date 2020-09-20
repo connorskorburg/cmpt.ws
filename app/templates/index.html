@@ -36,27 +36,6 @@
 
   </form>
 
-  <main class="message-success-container">
-
-  {% if messages %}
-
-    <div class="messages message-success">
-
-      {% for message in messages %}
-
-        {% if message.tags == 'success' %}
-
-          <p class="success">{{ message }}</p>
-
-        {% endif %}
-
-      {% endfor %}
-
-    </div>
-    
-    {% endif %}  
-    
-  </main>
 
 </body>
 </html>

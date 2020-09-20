@@ -28,14 +28,3 @@ header {
   }
 
 
-.message-success-container {
-  width: 100%;
-} 
-  .message-success {
-    margin: 1rem auto;
-    width: 350px;
-    padding: 1rem;
-  }
-    .success {
-      padding: 1rem 0;
-    }
