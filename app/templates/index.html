@@ -9,32 +9,56 @@
 </head>
 <body>
 
-  <header>
-    <h1>cmpt.ws - Compact your Urls with ease</h1>
-  </header>
+  <nav>
 
-  {% if messages %}
-  <div class="messages messages-error">
+    <section>
+
+      <article>
+        
+        <a href="/">
+          <h1>CMPT.WS</h1>
+        </a>
+        
+      </article>
+
+    
+  </nav>
+  
+
+  <main class="hero">
+
+    <header>
+      <h1>Compact Your URL</h1>
+    </header>
+    
+    {% if messages %}
+    <div class="messages messages-error">
       {% for message in messages %}
         {% if message.tags == 'error' %}
           <p class="error">{{ message }}</p>
         {% endif %}
       {% endfor %}
-  </div>
-  {% endif %}  
-  <form action="/createURL" method="post">
-    {% csrf_token %}
-    
+    </div>
+    {% endif %}
+
+
+    <form action="/createURL" method="post">
+      {% csrf_token %}
+      
     <label for="url">URL</label>
-    <input type="text" name="url" id="url">
-
+    <input type="text" name="url" id="url" placeholder="https://google.com">
+    
     <label for="alias">Alias</label>
-    <small>https://cmpt.ws/</small>
-    <input type="text" name="alias" id="alias" onkeyup="this.value = this.value.toLowerCase()">
-
+    <!-- <small>https://cmpt.ws/</small> -->
+    <input type="text" name="alias" id="alias" onkeyup="this.value = this.value.toLowerCase()" placeholder="google">
+    
     <button type="submit">Compact!</button>
-
+    
   </form>
+  
+</main>
+
+
 
 
 </body>

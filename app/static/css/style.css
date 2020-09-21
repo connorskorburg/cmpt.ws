@@ -7,19 +7,39 @@
 
 body {
   width: 100%;
+  background-color: rgb(107, 107, 107);
+  background: url('../images/wave\ \(6\).svg') no-repeat bottom rgb(73, 109, 109);
+  height: 100vh;
+}
+nav {
+  padding: 1rem 5%;
+  width: 100%;
+  background-color: rgb(40, 40, 46);
+}
+nav section a {
+  text-decoration: none;
+  color: #fff;
+}
+nav section {
+  width: 80%;
+  margin: 0 auto;
 }
 
+
 header {
-  padding: 1rem;
+  padding: 4rem 5% 2rem 5%;
   width: 100%;
 }
   header h1 {
+    font-size: 2.5rem;
     text-align: center;
+    color: #fff;
   }
 
 .messages-error {
   background-color: #ff8c8c;
   width: 100%;
+  margin: 1rem 0;
 }
   .error {
     text-align: center;
@@ -27,4 +47,113 @@ header {
     padding: 0.5rem;
   }
 
+.hero {
+  padding: 1rem 0 6rem 0;
+  width: 100%;
+  background: url('../images/wave\ \(7\).svg') no-repeat top;
+}
 
+  .hero form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+   .hero form input {
+      border: 2px solid #fff;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero form label {
+      color: rgb(212, 212, 212);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      display: block;
+    }
+    .hero input::placeholder {
+      font-size: 1rem;
+    }
+    .hero form input:focus {
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.2);
+    }
+    .hero form button {
+      width: 100%;
+      background-color: rgb(212, 212, 212);
+      color: #000;
+      border: none;
+      outline: none;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-top: 1rem;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .hero form button:hover, #url-link article a:hover {
+      cursor: pointer;
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.2);
+      transform: scale(1.02);
+      transition: all 350ms ease-in-out;
+    }
+
+    #url-info {
+      padding: 3rem 5% 1rem 5%;
+      width: 100%;
+    }
+    #url-info article {
+      width: 350px;
+      background-color: #f4f4f4;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+      #url-info article label {
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+      #url-info article p {
+        font-size: 1.15rem;
+        margin: 1rem 0;
+      }
+      #url-info article a {
+        color: rgb(0, 65, 34);
+      }
+
+
+  #url-link {
+    padding: 3rem 5% 1rem 5%;
+    width: 100%;
+  }
+    #url-link article {
+      width: 50%;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+      #url-link article a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        background-color: rgb(212,212,212);
+        text-decoration: none;
+        color: #000;
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 1.5rem;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      }
+
+@media screen and (min-width: 1400px){ 
+  header {
+    padding: 7rem 5% 2rem 5%;
+    width: 100%;
+  }
+}
