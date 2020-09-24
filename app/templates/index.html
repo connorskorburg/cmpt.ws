@@ -21,7 +21,8 @@
         
       </article>
 
-    
+    </section>
+
   </nav>
   
 
@@ -43,15 +44,26 @@
 
 
     <form action="/createURL" method="post">
-      {% csrf_token %}
+    {% csrf_token %}
+    <section>
+
+      <article>
+
+        <label for="url">URL</label>
+        <input type="text" name="url" id="url" placeholder="https://google.com">
+        
+      </article>
       
-    <label for="url">URL</label>
-    <input type="text" name="url" id="url" placeholder="https://google.com">
-    
-    <label for="alias">Alias</label>
-    <!-- <small>https://cmpt.ws/</small> -->
-    <input type="text" name="alias" id="alias" onkeyup="this.value = this.value.toLowerCase()" placeholder="google">
-    
+      <article>
+
+        <label for="alias">Alias</label>
+        <input type="text" name="alias" id="alias" onkeyup="this.value = this.value.toLowerCase()" placeholder="google">
+        
+      </article>
+      
+      
+    </section>  
+
     <button type="submit">Compact!</button>
     
   </form>

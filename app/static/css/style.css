@@ -7,18 +7,27 @@
 
 body {
   width: 100%;
-  background-color: rgb(107, 107, 107);
-  background: url('../images/wave\ \(6\).svg') no-repeat bottom rgb(73, 109, 109);
+  background-color: #3E4656;
   height: 100vh;
+  background: url('../images/bottom-wave.svg') no-repeat bottom #3E4656;
 }
 nav {
-  padding: 1rem 5%;
   width: 100%;
-  background-color: rgb(40, 40, 46);
 }
 nav section a {
+  display: inline-block;
+  padding: 1rem;
   text-decoration: none;
-  color: #fff;
+  background-color: #fff;
+  color: #3E4656;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+nav section a:hover {
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+  transform: scale(1.02);
+  transition: all 150ms ease-in-out;
 }
 nav section {
   width: 80%;
@@ -27,7 +36,7 @@ nav section {
 
 
 header {
-  padding: 4rem 5% 2rem 5%;
+  padding: 1rem 5% 2rem 5%;
   width: 100%;
 }
   header h1 {
@@ -50,14 +59,27 @@ header {
 .hero {
   padding: 1rem 0 6rem 0;
   width: 100%;
-  background: url('../images/wave\ \(7\).svg') no-repeat top;
 }
 
   .hero form {
+    border-radius: 0.5rem;
     width: 80%;
     margin: 0 auto;
-    padding: 0 5%;
+    background: rgb(89,128,156);
+    background: linear-gradient(90deg, rgba(89,128,156,1) 0%, rgba(211,234,255,1) 100%);
+    padding: 2rem;
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.2);
   }
+  .hero form section {
+    display: flex;
+    width: 100%;
+  }
+    .hero form section article:first-child{
+      width: 70%;
+    }
+    .hero form section article:last-child{
+      width: 30%;
+    }
    .hero form input {
       border: 2px solid #fff;
       box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -65,12 +87,21 @@ header {
       border: none;
       outline: none;
       width: 100%;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
       margin-bottom: 0.5rem;
     }
+    #url {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    #alias {
+      border-left: 1px solid #f4f4f4;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+
     .hero form label {
-      color: rgb(212, 212, 212);
+      color: #3E4656;
       font-weight: 600;
       margin-bottom: 0.5rem;
       font-size: 1.25rem;
@@ -84,8 +115,8 @@ header {
     }
     .hero form button {
       width: 100%;
-      background-color: rgb(212, 212, 212);
-      color: #000;
+      background-color: #246798;
+      color: #fff;
       border: none;
       outline: none;
       border-radius: 0.5rem;
@@ -112,9 +143,11 @@ header {
       margin: 0 auto;
       border-radius: 0.5rem;
       padding: 1rem;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
       #url-info article label {
         font-size: 1.15rem;
+        color: #3E4656;
         font-weight: 600;
       }
       #url-info article p {
@@ -122,7 +155,8 @@ header {
         margin: 1rem 0;
       }
       #url-info article a {
-        color: rgb(0, 65, 34);
+        color: #246798;
+        font-weight: 600;
       }
 
 
@@ -140,9 +174,9 @@ header {
         width: 100%;
         text-align: center;
         padding: 0.5rem 1rem;
-        background-color: rgb(212,212,212);
+        background-color: #246798;
         text-decoration: none;
-        color: #000;
+        color: #fff;
         border: none;
         outline: none;
         border-radius: 0.5rem;
@@ -151,8 +185,43 @@ header {
         box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
       }
 
-@media screen and (min-width: 1400px){ 
-  header {
+@media screen and (min-width:300px) and (max-width:450px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .hero form input {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+@media screen and (min-width: 1000px){ 
+  nav section a {
+    font-size: 1.15rem;
+  }
+  .hero form {
+    display: flex;
+  }
+  #alias {
+    border-radius: 0;
+  }
+    .hero form button {
+      width: 25%;
+      padding: 0;
+      margin-top: 2rem;
+      height: 3.125rem;
+      justify-self: baseline;
+      border-radius: 0;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border: 2px solid #246798;
+    }
+    .hero form input {
+      padding: 1rem 1rem 1rem 0.5rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    header {
     padding: 7rem 5% 2rem 5%;
     width: 100%;
   }
