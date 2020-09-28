@@ -1,11 +1,12 @@
 from django.db import models
 import pymysql.cursors
+import os
 # Create your models here.
 class MySQLConnection:
   def __init__(self, db):
     connection = pymysql.connect(host = 'localhost',
                                 user = 'root',
-                                password = 'root',
+                                password = os.environ.get('DB_PASS'),
                                 db = db,
                                 charset = 'utf8mb4',
                                 cursorclass = pymysql.cursors.DictCursor,
